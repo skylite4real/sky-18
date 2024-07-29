@@ -1,0 +1,420 @@
+/* Video Upload Section */
+.video-upload-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    display: none;
+    overflow-y: auto;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    flex-direction: column;
+    align-items: left;
+}
+
+/* Close Icon */
+.close-video-upload {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Header */
+.video-section-header {
+    text-align: center;
+}
+
+/* Circle Container */
+.circle-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Circle Style */
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin: 0 60px; /* Increase margin to add distance between circles */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    border: none; /* No border */
+    outline: none; /* No outline */
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .circle {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        margin: 0 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    .circle {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+        margin: 0 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .circle {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+        margin: 0 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .circle {
+        width: 36px;
+        height: 36px;
+        font-size: 22px;
+        margin: 0 20px;
+    }
+}
+
+/* Button Styles */
+button.choose-video-button,
+button.choose-thumbnail-button {
+    background-color: #fff; /* Button background color */
+    color: #000; /* Button font color */
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    padding: 10px 20px; /* Padding for button */
+    font-size: 16px; /* Font size */
+    border-radius: 20px; /* Circular ends */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 20px; /* Margin top for spacing */
+    display: block; /* Make the button block level */
+    width: fit-content; /* Adjust width to fit content */
+    margin-left: 30%; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+}
+
+@media (max-width: 992px) {
+    button.choose-video-button,
+    button.choose-thumbnail-button {
+        padding: 8px 18px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size for smaller screens */
+        margin-left: 25%; /* Adjust margin for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    button.choose-video-button,
+    button.choose-thumbnail-button {
+        padding: 6px 16px; /* Adjust padding for smaller screens */
+        font-size: 12px; /* Adjust font size for smaller screens */
+        margin-left: 2%; /* Adjust margin for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    button.choose-video-button,
+    button.choose-thumbnail-button {
+        padding: 6px 20px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size for smaller screens */
+        margin-left: 2%; /* Center horizontally */
+        margin-right: auto; /* Center horizontally */
+    }
+}
+
+button.choose-video-button:hover,
+button.choose-thumbnail-button:hover {
+    background-color: #f0f0f0; /* Slightly darker background on hover */
+}
+
+/* Description Styles */
+.description {
+    text-align: left; /* Align text to the left */
+    font-size: 14px;
+    color: #333; /* Darker color for better contrast */
+    margin-top: 10px;
+    display: block; /* Ensures it behaves like a block element */
+    width: fit-content; /* Adjusts width to fit content */
+    max-width: 80%; /* Ensures the description does not extend too far */
+    margin-left: 30%; /* Aligns with the button on larger screens */
+    margin-right: 30%; /* Center horizontally */
+    padding: 8px 12px; /* Adds padding for better readability */
+    background-color: #f9f9f9; /* Light background color for emphasis */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Arial', sans-serif; /* Ensure font consistency */
+}
+
+@media (max-width: 992px) {
+    .description {
+        margin-left: 25%; /* Adjust alignment for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .description {
+        margin-left: 2%; /* Adjust alignment for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .description {
+        margin-left: auto; /* Center horizontally on the smallest screens */
+        margin-right: auto; /* Center horizontally on the smallest screens */
+        max-width: 90%; /* Adjust max-width for smaller screens */
+    }
+}
+
+/* Unique Info Icon Styles */
+.video-info-icon,
+.thumbnail-info-icon {
+    font-size: 20px;
+    color: #555;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+    margin-left: 30%; /* Aligns with the button on larger screens */
+    margin-right: auto; /* Center horizontally */
+}
+
+@media (max-width: 992px) {
+    .video-info-icon,
+    .thumbnail-info-icon {
+        margin-left: 25%; /* Adjust alignment for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .video-info-icon,
+    .thumbnail-info-icon {
+        margin-left: 2%; /* Adjust alignment for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .video-info-icon,
+    .thumbnail-info-icon {
+        margin-left: auto; /* Center horizontally on the smallest screens */
+        margin-right: auto; /* Center horizontally on the smallest screens */
+    }
+}
+
+
+
+/* Styles specific to the display boxes */
+.display-box {
+    text-align: center;
+    margin-top: 20px; /* Ensure it appears below the button */
+    border: 2px solid #cccccc; /* Dashed border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    min-height: 200px; /* Minimum height to ensure box is visible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30%; /* Existing margin */
+    margin-right: 30%; /* Added margin */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .display-box {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+
+@media (max-width: 992px) {
+    .display-box {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+
+@media (max-width: 768px) {
+    .display-box {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media (max-width: 576px) {
+    .display-box {
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 10px; /* Adjust padding for smaller screens */
+        min-height: 150px; /* Adjust minimum height for smaller screens */
+    }
+}
+
+/* Styles specific to the chosen video */
+#videoDisplaySection,
+#thumbnailDisplaySection {
+    display: none;
+}
+
+/* Styles specific to the chosen video and thumbnail */
+#uploadedVideo,
+#chosenThumbnail {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    #uploadedVideo,
+    #chosenThumbnail {
+        max-width: 80%;
+        max-height: 400px; /* Adjust max height for larger screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    #uploadedVideo,
+    #chosenThumbnail {
+        max-width: 80%;
+        max-height: 600px; /* Further adjust max height for larger screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    #uploadedVideo,
+    #chosenThumbnai {
+        max-width: 80%;
+        max-height: 600px; /* Further adjust max height for larger screens */
+    }
+}
+
+
+
+
+
+/* Next Button Styles */
+.next-button {
+    background-color: #ADD8E6; /* Light blue button color */
+    color: #000; /* Black font color */
+    border: none !important; /* Remove border */
+    outline: none !important; /* Remove outline */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    padding: 10px 20px; /* Padding for button */
+    font-size: 16px; /* Font size */
+    border-radius: 20px; /* Circular ends */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: block;
+    margin: 20px auto; /* Center horizontally and add margin */
+    position: relative;
+    left: 15%; /* Move slightly to the right */
+}
+
+.next-button:hover {
+    background-color: #87CEEB; /* Slightly darker blue on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .next-button {
+        left: 5%; /* Adjust position for smaller screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .next-button {
+        left: 3%; /* Adjust position for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .next-button {
+        left: 40%; /* Center the button for very small screens */
+    }
+}
+
+
+/* circle-2 */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 70%; /* Adjust the width as needed */
+}
+
+/* Input Group */
+.input-group {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+/* Increase the height of the description box */
+.input-group textarea#description {
+    height: 250px; /* Adjust the height as needed */
+}
+
+/* Increase the height of the tags box */
+.input-group input#tags {
+    height: 150px; /* Adjust the height as needed */
+}
+
+
+/* Circle 2 Next Button */
+.circle-2-next-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none !important;
+    outline: none !important;
+    border-radius: 50px; /* Make both sides circular */
+    background-color: #ADD8E6;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    margin-left: auto; /* Move the button to the right */
+    margin-right: 1%; /* Adjust the right margin as needed */
+}
+
+.circle-2-next-button:hover {
+    background-color: #9dd3e5;
+}
+
+.circle-2-next-button:active {
+    background-color: #add8e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
